@@ -14,33 +14,35 @@ public class JpaMain {
         tx.begin();
         //code
         try {
-            //1. Member 추가
+            //비영속
 //            Member member = new Member();
 //            member.setId(2L);
+//            member.setId(101L);
 //            member.setName("HelloB");
+
+            //영속
+//            System.out.println("=== BEFORE ===");
 //            em.persist(member);
+//            System.out.println("=== AFTER ===");
+            
+//            Member findMember1 = em.find(Member.class, 101L);
+//            Member findMember2 = em.find(Member.class, 101L);
 
-            //2. Member 조회
-//            Member findMember = em.find(Member.class, 1L);
-//            System.out.println("findMember.getId() = " + findMember.getId());
-//            System.out.println("findMember.getName() = " + findMember.getName());
+//            System.out.println("findMember1.getId() = " + findMember1.getId());
+//            System.out.println("findMember1.getName() = " + findMember1.getName());
 
-            //3. Member 삭제
-//            Member findMember = em.find(Member.class, 1L);
-//            em.remove(findMember);
+//            System.out.println("(findMember1==findMember2) = " + (findMember1==findMember2));
 
-            //4. Member 수정 - em.persist 호출안해도됨
-//            Member findMember = em.find(Member.class, 1L);
-//            findMember.setName("HelloJPA");
+//            Member member1 = new Member(150L, "A");
+//            Member member2 = new Member(160L, "B");
+//
+//            em.persist(member1);
+//            em.persist(member2);
 
-            //5. JPQL 멤버 객체를 대상으로 질의
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(0)
-                    .setMaxResults(10)
-                    .getResultList();
-            for (Member member : result) {
-                System.out.println("member.getName() = " + member.getName());
-            }
+            Member findMember = em.find(Member.class, 150L);
+            findMember.setName("ZZZZ");
+
+            System.out.println("========================");
 
             tx.commit();
         }catch (Exception e) {
