@@ -39,11 +39,21 @@ public class JpaMain {
 //            em.persist(member1);
 //            em.persist(member2);
 
+//            Member findMember = em.find(Member.class, 150L);
+//            findMember.setName("ZZZZ");
+
+//            Member member = new Member(200L, "member200");
+//            em.persist(member);
+//
+//            em.flush();
+
             Member findMember = em.find(Member.class, 150L);
-            findMember.setName("ZZZZ");
+            findMember.setName("AAAA");
+//            em.detach(findMember);
+            em.clear();
+            Member findMember1 = em.find(Member.class, 150L);
 
             System.out.println("========================");
-
             tx.commit();
         }catch (Exception e) {
             tx.rollback();
