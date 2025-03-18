@@ -2,32 +2,22 @@ package hellojpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.TableGenerator;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-//테이블
+//시퀀스
 @Entity
-@TableGenerator(
-        name = "MEMBER_SEQ_GENERATOR",
-        table = "MY_SEQUENCES",
-        pkColumnValue = "MEMBER_SEQ", allocationSize = 1)
-public class Member {
+@SequenceGenerator(name ="member_seq_generator_3", sequenceName = "member_seq_3", initialValue = 1, allocationSize = 50)
+public class Member_3 {
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY) //자동증가
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR") //시퀀스
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "member_seq_generator_3") //시퀀스
     private Long id;
     @Column(name = "name", nullable = false)
     private String username;
@@ -38,7 +28,7 @@ public class Member {
     @Transient //DB에서는 미사용
     private int temp;
 
-    public Member() {
+    public Member_3() {
     }
 
     public Long getId() {

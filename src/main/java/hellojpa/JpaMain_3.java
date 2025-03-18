@@ -5,7 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class JpaMain {
+public class JpaMain_3 {
 
     public static void main(String[] args) {
 
@@ -16,12 +16,24 @@ public class JpaMain {
         //code
         try {
 
+            Member member1 = new Member();
+            member1.setUsername("A");
+
             Member member2 = new Member();
-            member2.setUsername("A");
+            member2.setUsername("B");
 
-            em.persist(member2);
+            Member member3 = new Member();
+            member3.setUsername("C");
 
-            System.out.println("####");
+            em.persist(member1); //1, 51
+            em.persist(member2); // 메모리
+            em.persist(member3); // 메모리
+
+            System.out.println("member1.getId() = " + member1.getId());
+            System.out.println("member2.getId() = " + member2.getId());
+            System.out.println("member3.getId() = " + member3.getId());
+
+
             System.out.println("========================");
             tx.commit();
         }catch (Exception e) {
