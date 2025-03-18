@@ -1,11 +1,8 @@
 package hellojpa;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 
-public class JpaMain {
+public class JpaMain_1 {
 
     public static void main(String[] args) {
 
@@ -16,13 +13,12 @@ public class JpaMain {
         //code
         try {
 
-            Member member2 = new Member();
-            member2.setUsername("A");
-            member2.setRoleType(RoleType.USER);
+            Member_1 findMember = em.find(Member_1.class, 150L);
+            findMember.setName("AAAA");
+//            em.detach(findMember);
+//            em.clear();
+            Member_1 findMember11 = em.find(Member_1.class, 150L);
 
-            em.persist(member2);
-
-            System.out.println("####");
             System.out.println("========================");
             tx.commit();
         }catch (Exception e) {
