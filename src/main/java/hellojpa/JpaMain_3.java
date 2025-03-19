@@ -16,22 +16,22 @@ public class JpaMain_3 {
         //code
         try {
 
-            Member member1 = new Member();
-            member1.setUsername("A");
+            Member_4 member41 = new Member_4();
+            member41.setUsername("A");
 
-            Member member2 = new Member();
-            member2.setUsername("B");
+            Member_4 member42 = new Member_4();
+            member42.setUsername("B");
 
-            Member member3 = new Member();
-            member3.setUsername("C");
+            Member_4 member43 = new Member_4();
+            member43.setUsername("C");
 
-            em.persist(member1); //1, 51
-            em.persist(member2); // 메모리
-            em.persist(member3); // 메모리
+            em.persist(member41); //1, 51
+            em.persist(member42); // 메모리
+            em.persist(member43); // 메모리
 
-            System.out.println("member1.getId() = " + member1.getId());
-            System.out.println("member2.getId() = " + member2.getId());
-            System.out.println("member3.getId() = " + member3.getId());
+            System.out.println("member1.getId() = " + member41.getId());
+            System.out.println("member2.getId() = " + member42.getId());
+            System.out.println("member3.getId() = " + member43.getId());
 
 
             System.out.println("========================");

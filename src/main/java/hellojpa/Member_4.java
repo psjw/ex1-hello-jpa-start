@@ -2,28 +2,21 @@ package hellojpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.TableGenerator;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.persistence.Transient;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 //테이블
-@Entity
-@TableGenerator(
-        name = "MEMBER_SEQ_GENERATOR",
-        table = "MY_SEQUENCES",
-        pkColumnValue = "MEMBER_SEQ", allocationSize = 1)
-public class Member {
+//@Entity
+//@TableGenerator(
+//        name = "MEMBER_SEQ_GENERATOR",
+//        table = "MY_SEQUENCES",
+//        pkColumnValue = "MEMBER_SEQ", allocationSize = 1)
+public class Member_4 {
 
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY) //자동증가
@@ -38,7 +31,7 @@ public class Member {
     @Transient //DB에서는 미사용
     private int temp;
 
-    public Member() {
+    public Member_4() {
     }
 
     public Long getId() {

@@ -11,8 +11,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 //시퀀스
-@Entity
-@SequenceGenerator(name ="member_seq_generator_3", sequenceName = "member_seq_3", initialValue = 1, allocationSize = 50)
+//@Entity
+//@SequenceGenerator(name ="member_seq_generator_3", sequenceName = "member_seq_3", initialValue = 1, allocationSize = 50)
 public class Member_3 {
 
     @Id

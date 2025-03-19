@@ -5,7 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class JpaMain {
+public class JpaMain_4 {
 
     public static void main(String[] args) {
 
@@ -16,10 +16,10 @@ public class JpaMain {
         //code
         try {
 
-            Member member2 = new Member();
-            member2.setUsername("A");
+            Member_4 member42 = new Member_4();
+            member42.setUsername("A");
 
-            em.persist(member2);
+            em.persist(member42);
 
             System.out.println("####");
             System.out.println("========================");
