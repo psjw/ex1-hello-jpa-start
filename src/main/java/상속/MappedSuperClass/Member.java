@@ -1,12 +1,12 @@
-package 다대다한계극복;
+package 상속.MappedSuperClass;
 
 import jakarta.persistence.*;
+import 일대일양방향.Locker;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
-//@Entity
-public class Member {
+@Entity
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue
@@ -15,9 +15,13 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
+    //모든 테이블의 공통속성
+//    private String createBy;
+//    private LocalDateTime createDate;
+//    private String lasModifiedBy;
+//    private LocalDateTime lastModifiedDate;
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+
 
     public Long getId() {
         return id;
