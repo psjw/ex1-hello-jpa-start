@@ -2,7 +2,7 @@ package 일대일양방향;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class Locker {
     @Id
     @GeneratedValue

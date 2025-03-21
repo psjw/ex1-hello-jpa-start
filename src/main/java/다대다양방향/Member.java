@@ -1,6 +1,9 @@
-package 일대일양방향;
+package 다대다양방향;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //@Entity
 public class Member {
@@ -12,9 +15,9 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
-    @OneToOne
-    @JoinColumn(name = "LOCKER_ID")
-    private Locker locker;
+    @ManyToMany
+    @JoinTable(name = "MEMMBER_PRODUCT")
+    private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
