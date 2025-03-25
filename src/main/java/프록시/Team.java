@@ -1,4 +1,4 @@
-package 상속.MappedSuperClass;
+package 프록시;
 
 import jakarta.persistence.*;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//@Entity
-public class Team extends BaseEntity {
+@Entity
+public class Team {
 
     @Id
     @GeneratedValue

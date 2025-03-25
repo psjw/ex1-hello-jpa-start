@@ -1,12 +1,9 @@
-package 상속.MappedSuperClass;
+package 프록시;
 
 import jakarta.persistence.*;
-import 일대일양방향.Locker;
 
-import java.time.LocalDateTime;
-
-//@Entity
-public class Member extends BaseEntity {
+@Entity
+public class Member {
 
     @Id
     @GeneratedValue
@@ -15,12 +12,9 @@ public class Member extends BaseEntity {
     @Column(name = "USERNAME")
     private String username;
 
-    //모든 테이블의 공통속성
-//    private String createBy;
-//    private LocalDateTime createDate;
-//    private String lasModifiedBy;
-//    private LocalDateTime lastModifiedDate;
-
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
+    private Team team;
 
 
     public Long getId() {
@@ -39,4 +33,7 @@ public class Member extends BaseEntity {
         this.username = username;
     }
 
+    public Team getTeam() {
+        return team;
+    }
 }
