@@ -1,11 +1,11 @@
-package 영속성전이cascade.해결책;
+package 고아객체.CASCADE삭제;
 
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
+@Entity
 public class Parent {
 
     @Id
@@ -37,5 +37,13 @@ public class Parent {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Child> getChildList() {
+        return childList;
+    }
+
+    public void setChildList(List<Child> childList) {
+        this.childList = childList;
     }
 }

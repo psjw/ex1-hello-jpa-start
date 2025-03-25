@@ -1,13 +1,10 @@
-package 영속성전이cascade.해결책;
+package 고아객체;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 //@Entity
-public class Parent {
-
+public class Child {
     @Id
     @GeneratedValue
     @Column(name = "MEBER_ID")
@@ -15,13 +12,9 @@ public class Parent {
 
     private String name;
 
-    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
-    private List<Child> childList = new ArrayList<>();
-
-    public void addChild(Child child){
-        childList.add(child);
-        child.setParent(this);
-    }
+    @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
+    private Parent parent;
 
     public Long getId() {
         return id;
@@ -37,5 +30,13 @@ public class Parent {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Parent getParent() {
+        return parent;
+    }
+
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 }

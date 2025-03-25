@@ -3,7 +3,7 @@ package 영속성전이cascade.해결책;
 import jakarta.persistence.*;
 
 
-@Entity
+//@Entity
 public class Child {
     @Id
     @GeneratedValue
