@@ -1,4 +1,4 @@
-package 프록시;
+package 즉시로딩NPlus1문제;
 
 import jakarta.persistence.*;
 
@@ -12,8 +12,8 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.EAGER) //ㅖProxy객체로 조회함
+    @JoinColumn(name = "TEAM_ID")
     private Team team;
 
 
@@ -35,5 +35,9 @@ public class Member {
 
     public Team getTeam() {
         return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

@@ -1,25 +1,20 @@
-package 프록시;
+package 영속성전이cascade;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 //@Entity
-public class Team {
-
+public class Child {
     @Id
     @GeneratedValue
-    @Column(name = "TEAM_ID")
+    @Column(name = "MEBER_ID")
     private Long id;
 
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "MEMBER_ID")
-    private List<Member> members = new ArrayList<>();
-
+    @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
+    private Parent parent;
 
     public Long getId() {
         return id;
@@ -37,12 +32,11 @@ public class Team {
         this.name = name;
     }
 
-
-    public List<Member> getMembers() {
-        return members;
+    public Parent getParent() {
+        return parent;
     }
 
-    public void setMembers(List<Member> members) {
-        this.members = members;
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 }

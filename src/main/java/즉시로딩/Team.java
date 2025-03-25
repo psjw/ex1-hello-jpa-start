@@ -1,4 +1,4 @@
-package 프록시;
+package 즉시로딩;
 
 import jakarta.persistence.*;
 

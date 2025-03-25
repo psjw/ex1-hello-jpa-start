@@ -1,4 +1,4 @@
-package 프록시;
+package 즉시로딩NPlus1문제;
 
 import jakarta.persistence.*;
 
