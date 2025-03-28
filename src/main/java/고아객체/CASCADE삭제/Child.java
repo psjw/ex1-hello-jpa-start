@@ -3,7 +3,7 @@ package 고아객체.CASCADE삭제;
 import jakarta.persistence.*;
 
 
-@Entity
+//@Entity
 public class Child {
     @Id
     @GeneratedValue
