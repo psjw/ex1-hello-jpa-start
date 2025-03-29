@@ -3,7 +3,7 @@ package 값타입.값타입과불변객체;
 
 import jakarta.persistence.Embeddable;
 
-@Embeddable
+//@Embeddable
 public class Period {
     private String startDate;
     private String endDate;

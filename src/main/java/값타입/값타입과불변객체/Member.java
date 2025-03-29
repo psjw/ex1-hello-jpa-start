@@ -2,7 +2,7 @@ package 값타입.값타입과불변객체;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class Member {
 
     @Id

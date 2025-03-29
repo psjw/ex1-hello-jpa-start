@@ -1,4 +1,4 @@
-package 값타입.값타입과불변객체;
+package 값타입.값타입컬렉션;
 
 import jakarta.persistence.Embeddable;
 
