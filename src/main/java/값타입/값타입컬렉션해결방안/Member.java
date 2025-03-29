@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Entity
+//@Entity
 public class Member {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEBER_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
     @Column(name = "USERNAME")
     private String username;

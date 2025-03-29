@@ -1,8 +1,16 @@
-package 프록시;
+package JQPL;
 
-import jakarta.persistence.*;
 
-//@Entity
+import jakarta.persistence.Column;
+
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+import 값타입.값타입컬렉션해결방안.Address;
+
+@Entity
 public class Member {
 
     @Id
@@ -12,9 +20,9 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
-    private Team team;
+    @Embedded
+    private Address homeAddress;
+
 
 
     public Long getId() {
@@ -33,7 +41,4 @@ public class Member {
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
-    }
 }

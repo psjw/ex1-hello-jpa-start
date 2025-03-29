@@ -10,7 +10,7 @@ public class Member_5 {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEBER_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
     @Column(name = "USERNAME")
     private String username;

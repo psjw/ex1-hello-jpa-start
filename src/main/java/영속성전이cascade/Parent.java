@@ -10,7 +10,7 @@ public class Parent {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEBER_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
 
     private String name;

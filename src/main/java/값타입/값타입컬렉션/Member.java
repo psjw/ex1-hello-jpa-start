@@ -12,13 +12,14 @@ public class Member {
 
     @Id
     @GeneratedValue
-    @Column(name = "MEBER_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
     @Column(name = "USERNAME")
     private String username;
 
     @Embedded
     private Address homeAddress;
+
 
     //값타입 컬렉션 - 기본적으로 LAZY
     @ElementCollection

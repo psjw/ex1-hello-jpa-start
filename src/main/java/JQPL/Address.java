@@ -1,8 +1,8 @@
-package 값타입.값타입컬렉션해결방안;
+package JQPL;
 
 import jakarta.persistence.Embeddable;
 
-//@Embeddable
+@Embeddable
 public class Address {
     private String city;
     private String street;

@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Child {
     @Id
     @GeneratedValue
-    @Column(name = "MEBER_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
 
     private String name;
